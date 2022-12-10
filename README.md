@@ -26,3 +26,13 @@ A python application to generate random memes from user inputs through a command
   --path: path to image
 
 Example: python3 meme.py --path [PATH to image] --body[BODY] --author[AUTHOR]
+![python3 meme.py](print1.png)
+
+### Web Interface
+
+- Run `python3 app.py` on the terminal
+
+Go to link [http://127.0.0.1:5000](http://127.0.0.1:5000).
+
+Example: python3 app.py
+![python3 app.py](print2.png)
