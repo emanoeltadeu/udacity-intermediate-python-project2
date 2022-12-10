@@ -54,20 +54,22 @@ def meme_form():
 @app.route('/create', methods=['POST'])
 def meme_post():
     """Create a user defined meme."""
-    image_url = request.form['image_url']
-    img = requests.get(image_url)
-
-    body = request.form['body']
-    author = request.form['author']
-
-    path = None
-
     try:
+        image_url = request.form['image_url']
+        img = requests.get(image_url)
+
+        body = request.form['body']
+        author = request.form['author']
+        path = None
 
         img_file = f'meme_{datetime.now().strftime("%Y-%m-%d_%H:%M:%S")}.jpeg'
         open(img_file, 'wb').write(img.content)
         path = meme.make_meme(img_file, body, author)
         os.remove(img_file)
+
+    except requests.exceptions.ConnectionError:
+        print("Invalid Img URL")
+        return render_template('meme_error.html')
 
     except Exception as e:
         print(f"Exception: {e}")
