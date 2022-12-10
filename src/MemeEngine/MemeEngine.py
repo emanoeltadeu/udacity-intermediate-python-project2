@@ -31,7 +31,7 @@ class MemeEngine:
             fonte_path = random.choice(fontes_files)
 
             draw = ImageDraw.Draw(img)
-            draw.text((10, img.size[1]-150),
+            draw.text((10, random.randint(10, (img.size[1]-100))),
                       f'{text}\n- {author}',
                       font=ImageFont.truetype(fonte_path, int(height/22)),
                       fill='black'

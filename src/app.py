@@ -42,6 +42,7 @@ def meme_rand():
     img = random.choice(imgs)
     quote = random.choice(quotes)
     path = meme.make_meme(img, quote.body, quote.author)
+    print(f"{path}")
     return render_template('meme.html', path=path)
 
 
@@ -62,9 +63,10 @@ def meme_post():
         author = request.form['author']
         path = None
 
-        img_file = f'meme_{datetime.now().strftime("%Y-%m-%d_%H:%M:%S")}.jpeg'
+        img_file = f'meme_{image_url}.jpeg'
         open(img_file, 'wb').write(img.content)
         path = meme.make_meme(img_file, body, author)
+        print(f"{path}")
         os.remove(img_file)
 
     except requests.exceptions.ConnectionError:
