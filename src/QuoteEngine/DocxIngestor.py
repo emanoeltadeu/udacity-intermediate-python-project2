@@ -18,7 +18,7 @@ class DocxIngestor(IngestorInterface):
 
             docx_file = docx.Document(path)
             quotes_list = []
-            
+
             for para in docx_file.paragraphs:
                 if para.text != "":
                     parsed_text = para.text.split(' - ')

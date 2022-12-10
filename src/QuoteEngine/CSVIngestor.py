@@ -6,6 +6,7 @@ from typing import List
 from .IngestorInterface import IngestorInterface
 from .QuoteModel import QuoteModel
 
+
 class CSVIngestor(IngestorInterface):
     """Class to parse csv files."""
 

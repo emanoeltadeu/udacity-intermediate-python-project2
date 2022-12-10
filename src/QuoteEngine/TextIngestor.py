@@ -3,7 +3,7 @@
 from typing import List
 
 from .IngestorInterface import IngestorInterface
-from .QuoteModel        import QuoteModel
+from .QuoteModel import QuoteModel
 
 
 class TextIngestor(IngestorInterface):
@@ -15,7 +15,7 @@ class TextIngestor(IngestorInterface):
     def parse(cls, path: str) -> List[QuoteModel]:
         """Parse the txt file at and return List[QuoteModel]."""
         try:
-    
+
             file = open(path, "r")
             quotes_list = []
 

@@ -20,7 +20,7 @@ class PDFIngestor(IngestorInterface):
         quotes_list = []
 
         try:
-  
+
             tmp = f'./memes/{random.randint(0, 1000)}.txt'
             call = subprocess.call(['pdftotext', path, tmp])
 
@@ -33,11 +33,12 @@ class PDFIngestor(IngestorInterface):
 
                     if line_length > 0:
                         parsed_line = line.split(' - ')
-                        quote_model = QuoteModel(parsed_line[0], parsed_line[1])
+                        quote_model = QuoteModel(parsed_line[0],
+                                                 parsed_line[1])
                         quotes_list.append(quote_model)
-                
+
             os.remove(tmp)
             return quotes_list
-            
+
         except Exception as e:
             print(f'Exception: {e}')

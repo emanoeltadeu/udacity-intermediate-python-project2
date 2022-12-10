@@ -1,7 +1,7 @@
 """IngestorInterface ABC."""
 
-from abc         import ABC, abstractmethod
-from typing      import List
+from abc import ABC, abstractmethod
+from typing import List
 from .QuoteModel import QuoteModel
 
 
@@ -20,4 +20,4 @@ class IngestorInterface(ABC):
     @abstractmethod
     def parse(cls, path: str) -> List[QuoteModel]:
         """Abstract method to parse files and return List[QuoteModel]."""
-        pass    
+        pass

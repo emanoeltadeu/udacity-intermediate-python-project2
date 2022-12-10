@@ -1,5 +1,6 @@
 """Class to encapsulate the body and author."""
 
+
 class QuoteModel():
     """Create new quote model to encapsulate the body and author."""
 
@@ -13,5 +14,5 @@ class QuoteModel():
         return f"{self.body} - {self.author}"
 
     def __repr__(self):
-        """Return `repr(self)`, a computer-readable string representation of this object."""
-        return (f"QuoteModel(body={self.body!r}, name={self.author!r}")    
+        """Return a computer-readable string representation of this object."""
+        return (f"QuoteModel(body={self.body!r}, name={self.author!r}")

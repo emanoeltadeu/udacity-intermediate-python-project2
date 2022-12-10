@@ -1,12 +1,12 @@
 """Implementation subclass of IngestorInterface."""
 
-from typing             import List
+from typing import List
 from .IngestorInterface import IngestorInterface
-from .QuoteModel        import QuoteModel
-from .DocxIngestor      import DocxIngestor
-from .CSVIngestor       import CSVIngestor
-from .PDFIngestor       import PDFIngestor
-from .TextIngestor      import TextIngestor
+from .QuoteModel import QuoteModel
+from .DocxIngestor import DocxIngestor
+from .CSVIngestor import CSVIngestor
+from .PDFIngestor import PDFIngestor
+from .TextIngestor import TextIngestor
 
 
 class Ingestor(IngestorInterface):
@@ -24,6 +24,6 @@ class Ingestor(IngestorInterface):
                     return ingestor.parse(path)
 
             raise Exception("Invalid File Format")
-            
+
         except Exception as e:
             print(e)
