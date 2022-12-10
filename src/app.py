@@ -12,7 +12,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-meme = MemeEngine('./memes')
+meme = MemeEngine('./static')
 
 
 def setup():
